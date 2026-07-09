@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pasuay — projects</title>
+  <meta name="description" content="Projects by pasuay — small, careful tools for Cantonese, language, and music." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='8' cy='48' r='5' fill='%236b542f'/%3E%3Ccircle cx='24' cy='36' r='5' fill='%236b542f'/%3E%3Ccircle cx='40' cy='18' r='5' fill='%236b542f'/%3E%3Ccircle cx='56' cy='27' r='6' fill='%23b5432c'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #faf6ec;
+      --panel: #fffdf7;
+      --ink: #2e2a22;
+      --soft: #8a7d63;
+      --line: #e7dcc4;
+      --accent: #b0592f;
+      --accent-soft: #c9744a;
+      --shadow: rgba(60, 44, 20, 0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16140f;
+        --panel: #1f1c15;
+        --ink: #ece4d3;
+        --soft: #9a8e74;
+        --line: #322c20;
+        --accent: #e0895a;
+        --accent-soft: #c9744a;
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 46rem; margin: 0 auto; padding: clamp(2.5rem, 8vw, 5.5rem) 1.3rem 3rem; }
+
+    header { margin-bottom: 3rem; }
+    .name {
+      font-size: clamp(2rem, 6vw, 2.9rem); font-weight: 700;
+      letter-spacing: -0.025em; margin: 0 0 0.55rem; line-height: 1.1;
+    }
+    .name .dot { color: var(--accent); }
+    .tagline { font-size: 1.08rem; color: var(--soft); margin: 0 0 1.3rem; max-width: 33rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font-size: 0.95rem; }
+    .links a {
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid transparent; transition: border-color 0.15s;
+    }
+    .links a:hover { border-bottom-color: var(--accent); }
+
+    .section-label {
+      font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--soft); margin: 0 0 1.15rem; font-weight: 600;
+    }
+    .projects { display: grid; gap: 1rem; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+      padding: 1.35rem 1.45rem; transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+    }
+    .card:hover { border-color: var(--accent-soft); transform: translateY(-2px); box-shadow: 0 10px 26px var(--shadow); }
+    .card-title { font-size: 1.28rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+    .card-title .zh { font-weight: 500; color: var(--soft); font-size: 0.86em; margin-left: 0.45rem; }
+    .card-desc { margin: 0.55rem 0 0.95rem; opacity: 0.9; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .tag { font-size: 0.72rem; color: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.14rem 0.62rem; }
+    .card-links { display: flex; flex-wrap: wrap; gap: 1.15rem; font-size: 0.92rem; }
+    .card-links a {
+      color: var(--accent); text-decoration: none; font-weight: 600;
+      border-bottom: 1px solid transparent; transition: border-color 0.15s;
+    }
+    .card-links a:hover { border-bottom-color: var(--accent); }
+    .card-links a::after { content: " →"; font-weight: 400; }
+    .card-stub { opacity: 0.7; }
+    .card-stub:hover { transform: none; box-shadow: none; border-color: var(--line); }
+    .card-desc.muted { color: var(--soft); font-style: italic; margin-bottom: 0; }
+
+    footer {
+      margin-top: 3.5rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+      color: var(--soft); font-size: 0.85rem;
+    }
+    footer a { color: var(--soft); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="name">pasuay<span class="dot">.</span></h1>
+      <p class="tagline">Small, careful tools for music, language, and learning — built to run entirely in your browser.</p>
+      <nav class="links">
+        <a href="https://github.com/pasuay">GitHub</a>
+        <a href="mailto:pasuay@gmail.com">Email</a>
+        <a href="https://buymeacoffee.com/OU8KYl6MSh" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="section-label">Projects</p>
+      <div class="projects">
+
+        <div class="card">
+          <h2 class="card-title">Tonic</h2>
+          <p class="card-desc">
+            A relative-pitch ear trainer for pop musicians — learn to hear scale
+            degrees through functional solfège, from simple anchor tones up to full
+            melodies with inferred tonality. Runs in the browser.
+          </p>
+          <div class="tags">
+            <span class="tag">ear training</span>
+            <span class="tag">music</span>
+            <span class="tag">solfège</span>
+            <span class="tag">browser</span>
+          </div>
+          <div class="card-links">
+            <a href="https://pasuay.github.io/tonic/">Live app</a>
+            <a href="https://github.com/pasuay/tonic">Code</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Thunder Math</h2>
+          <p class="card-desc">
+            A 3D WebGL arcade game for math practice — zap approaching monsters by
+            tapping the right answer, across eight math modes with a research-backed
+            difficulty curve.
+          </p>
+          <div class="tags">
+            <span class="tag">game</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">math</span>
+            <span class="tag">browser</span>
+          </div>
+          <div class="card-links">
+            <a href="https://pasuay.github.io/thunder-math/">Live app</a>
+            <a href="https://github.com/pasuay/thunder-math">Code</a>
+          </div>
+        </div>
+
+        <div class="card card-stub">
+          <h2 class="card-title">Cantoflow</h2>
+          <p class="card-desc muted">— coming soon —</p>
+        </div>
+
+        <!-- Add a project: copy a filled card block above (title / desc / tags /
+             links). For Cantoflow, replace the stub card once it's published. -->
+
+
+      </div>
+    </main>
+
+    <footer>
+      © 2026 pasuay · <a href="https://github.com/pasuay">github.com/pasuay</a>
+    </footer>
+  </div>
+</body>
+</html>
